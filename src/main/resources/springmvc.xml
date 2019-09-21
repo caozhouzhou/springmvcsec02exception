@@ -20,8 +20,12 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!--配置无需拦截的静态资源 -->
     <springmvc:resources mapping="/third_part/**" location="/third_part/" />
     <springmvc:resources mapping="/js/**" location="/js/" />
+
+    <!--配置自定义异常 -->
+    <bean id="sysExceptionResolver" class="cn.jdwa.exception.SysExceptionResolver"/>
 
     <!-- 开启SpringMVC框架注解的支持 -->
     <mvc:annotation-driven/>
